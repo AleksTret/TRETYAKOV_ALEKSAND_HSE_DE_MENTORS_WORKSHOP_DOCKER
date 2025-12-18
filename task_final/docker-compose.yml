@@ -1,0 +1,13 @@
+services:
+  shorturl:
+    build: ./shorturl
+    container_name: shorturl_mw_task_final
+    ports:
+      - "8080:80"
+    volumes:
+      - url_data:/app/data
+    restart: unless-stopped
+
+volumes:
+  url_data:
+    name: shorturl_mw_task_final_data
